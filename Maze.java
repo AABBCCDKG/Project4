@@ -1,3 +1,11 @@
+/**
+ * A program Project4
+ *
+ * <p>Purdue University -- CS18000 -- Spring 2024 -- Project4-- </p>
+ *
+ * @author Dong Wang Purdue CS
+ * @version Mar 27, 2024
+ */
 public class Maze {
     private final int[] end;
     private final char[][] grid;
@@ -66,4 +74,3 @@ public class Maze {
         return sb.toString();
     }
 }
-
