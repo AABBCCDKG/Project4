@@ -50,6 +50,8 @@ public class MazeSolver {
             }
 
             maze = new Maze(name, grid, start, end);
+        } catch (IOException e) {
+            throw new IOException("Error reading file: " + filename, e);
         }
     }
 
@@ -90,7 +92,8 @@ public class MazeSolver {
     }
 
     private boolean isValid(int[] position) {
-        int row = position[0], col = position[1];
+        int row = position[0];
+        int col = position[1];
         char[][] grid = maze.getGrid();
         return row >= 0 && row < grid.length && col >= 0 && col < grid[0].length && grid[row][col] == 'P';
     }
@@ -139,10 +142,8 @@ public class MazeSolver {
     }
 
     public void writeSolution(String filename) {
-        try {
-            FileWriter writer = new FileWriter(filename);
+        try (FileWriter writer = new FileWriter(filename)){
             writer.write(maze.pathString());
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
