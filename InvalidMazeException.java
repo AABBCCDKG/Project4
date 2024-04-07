@@ -6,7 +6,7 @@
  * @author Dong Wang Purdue CS
  * @version Mar 27, 2024
  */
-public class InvalidMazeException extends Exception{
+public class InvalidMazeException extends Exception {
 
     public InvalidMazeException(String message) {
         super(message);
